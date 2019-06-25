@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <meta charset="UTF-8" />
+      <title>User info</title>
+      
+  
+      <th:block th:include="/_header"></th:block>
+  
+   </head>
+   <body style="height:1500px">
+   
+      <!-- Include _menu.html -->
+      <th:block th:include="/_menu"></th:block>
+   
+      <div class="container" style="margin-top:50px">
+      
+      <th:block th:include="/user/_usermenu"></th:block>
+      
+	      <h1>Detail</h1>
+	      <th:block th:include="/_successmessage"></th:block>
+	      <br/><br/>
+	      <div class="row">
+	         <table border="1" class="table">
+	            <tr >
+	              <td> Username </td>
+	               <td th:utext="${user.getUsername()}">...</td>
+	            </tr>
+	            
+	            <tr >
+	               <td>Phone number </td>
+	               <td th:utext="${user.getPhonenumber()}">...</td>
+	            </tr>
+	             <tr >
+	               <td>Email </td>
+	               <td th:utext="${user.getEmail()}">...</td>
+	            </tr>
+	              
+	              <tr >
+	              <td> Status</td>
+	               <td th:utext="${user.getStatus()}">...</td>
+	            </tr>
+	              
+	              <tr >
+	              <td> Address </td>
+	               <td th:utext="${user.getAddress()}">...</td>
+	            </tr>
+	            
+	              
+	              <tr >
+	              <td> Create date </td>
+	               <td th:utext="${user.getCreateDate()}">...</td>
+	            </tr>
+	            
+	              
+	            
+	         </table>
+	      </div>
+      
+      </div>
+      
+      <th:block th:include="/_footer"></th:block>
+   </body>
+</html>

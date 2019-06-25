@@ -1,0 +1,93 @@
+.img 
+{
+	width:300px;
+	margin-top:50px;
+}
+.logo
+{
+	width:30px;
+}
+.topicicon
+{
+	width:150px;
+}
+.jumbotron
+{
+	height:300px;
+	background-image: url("http://localhost:8080/imgs/topbg.png");
+	background-repeat: no-repeat;
+	background-size: 1420px 249px;
+	background-position:0px 50px;
+	padding-top: 0px;
+    padding-bottom: 0px;
+    background-color:#e8e5de;
+}
+
+.panel
+{
+	width:300px;
+}
+.panel-default>.panel-heading
+{
+	background-color:#f17916;
+}
+
+.panel-footer
+{
+	background-color:#186e04;
+}
+.text-white
+{
+	color:#ffffff;
+}
+
+.container
+{
+	width:80%;
+}
+.container-fluid
+{
+	margin-bottom:100px;
+}
+
+#myCarousel
+{
+    padding-right: 0px;
+    padding-left: 0px;
+	
+}
+.text-green
+{
+	color:#186e04;
+}
+
+.text-orange
+{
+	color:#f17916;
+}
+
+#carouselContent
+{
+	height:300px;
+	background-color:#186e04;
+}
+.item
+{
+	margin-top:20px;
+}
+.mybadge
+{
+	margin-top:50px;
+}
+.trackicon
+{
+	background-image: url("http://localhost:8080/imgs/trackicon.png");
+	background-repeat: no-repeat;
+	background-size: 600px 100px;
+	background-position:center;
+	height:100px;
+	
+	margin-top:170px;
+}
+
+

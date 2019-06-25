@@ -1,0 +1,31 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid" xmlns:th="http://www.thymeleaf.org">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/home/index">Orange School</a>
+    </div>
+    <ul class="nav navbar-nav" th:each ="accesscode : ${accesscodes}">
+      <li th:if="${accesscode =='Math'}" th:class="${menucode == 'Math'} ? 'active' : ''"><a th:href="@{/math/index}">Math</a></li>
+      <li th:if="${accesscode =='Ela'}" th:class="${menucode == 'Ela'} ? 'active' : ''"><a th:href="@{/ela/index}">Ela</a></li>
+      <li th:if="${accesscode =='Flashcard'}" th:class="${menucode == 'Flashcard'} ? 'active' : ''"><a th:href="@{/flashcard/index}">Flashcard</a></li>
+      <li th:if="${accesscode =='Story'}" th:class="${menucode == 'Story'} ? 'active' : ''"><a th:href="@{/story/index}">Story</a></li>
+      <li th:if="${accesscode =='Purchase'}" th:class="${menucode == 'Purchase'} ? 'active' : ''"><a th:href="@{/product/index}">Purchase</a></li>
+      
+       <li th:if="${accesscode =='Login'}" th:class="dropdown-item"><a th:if="${#request.userPrincipal == null}" th:href="@{/home/signin}">Login</a></li>
+	
+    </ul>
+    <ul class="nav navbar-nav"  th:if="${#request.userPrincipal != null}" >
+	    <li th:class="${actioncode == 'User'} ? 'active dropdown' : 'dropdown'">
+	    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Setting
+	   <span class="caret"></span></a>
+	    <ul class="dropdown-menu">
+	      <li class="dropdown-item" th:if="${#request.userPrincipal != null}" ><a th:href="@{/user/detail}">Your account</a></li>
+	      <li th:class="dropdown-item" th:if="${#request.userPrincipal != null}" ><a th:href="@{/transaction/index}">Transaction</a></li>
+	      <li th:class="dropdown-item" th:if="${#request.userPrincipal != null}" ><a th:href="@{/result/index}">Result</a></li>
+	      <li th:class="dropdown-item" ><a th:if="${#request.userPrincipal != null}" th:href="@{/home/logout}">Logout</a></li>
+	     
+	    </ul>
+	  </li>
+    </ul>
+  </div>
+</nav>
+

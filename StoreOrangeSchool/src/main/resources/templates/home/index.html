@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <meta charset="UTF-8" />
+      <title>Index page</title>
+      
+  
+      <th:block th:include="/_header"></th:block>
+  
+   </head>
+   <body style="height:1500px">
+   
+      <!-- Include _menu.html -->
+      <th:block th:include="/_menu"></th:block>
+   
+      <div class="container" style="margin-top:50px">
+	      <h1>Index page</h1>
+	      
+	      <br/><br/>
+	      <div class="row">
+	        	<div th:each ="topic : ${topics}" class="col-xs-12 col-sm-6 col-md-4 col-lg-3 panel"  style="width:50%">
+	             
+	               <h4 th:utext="${topic.name}"></h4>
+	                <p th:utext="${topic.math.getDescription()}"></p>
+	                <br>
+	                <p th:utext="${topic.ela.getDescription()}"></p>
+	                
+	                <a class="btn btn-info" th:href="@{/math/index/{category}(category=${topic.math.getId()})}" ><span th:utext="${topic.math.getSkillcount()}"></span> math skills </a>
+	                <br>
+	                <a class="btn btn-info" th:href="@{/math/index/{category}(category=${topic.ela.getId()})}"><span th:utext="${topic.ela.getSkillcount()}"></span> ela skills </a>
+	               
+	              </div>
+	      </div>
+      
+      </div>
+      
+      <th:block th:include="/_footer"></th:block>
+   </body>
+</html>
